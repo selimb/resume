@@ -1,0 +1,2 @@
+default:
+	xelatex main.tex

@@ -106,24 +106,78 @@
 \pagestyle{empty}
 
 %----------------------------------------------------------------------------------------
+% Header
+%----------------------------------------------------------------------------------------
+\newcommand*{\name}[1]{\def\@fullname{#1}}
+\newcommand*{\subtitle}[1]{\def\@position{#1}}
+
+\def\linkedinicon{\faLinkedin}
+\newcommand*{\setlinkedin}[1]{\def\@linkedintext{#1}}
+\def\linkedinlink{https://linkedin.com/in/\@linkedintext}
+
+\def\phoneicon{\faPhone}
+\newcommand*{\setphone}[1]{\def\@phone{#1}}
+\def\phonetext{\@phone}
+
+\def\addressicon{\faMap}
+\newcommand*{\setaddress}[1]{\def\@address{#1}}
+\def\addresstext{\@address}
+
+\def\emailicon{\faEnvelope}
+\newcommand*{\setemail}[1]{\def\@email{#1}}
+\def\emaillink{mailto:\@email}
+\def\emailtext{\@email}
+
+\def\githubicon{\faGithub}
+\newcommand*{\setgithub}[1]{\def\@github{#1}}
+\def\githublink{https://github.com/\@github}
+\def\githubtext{/\@github}
+
+% Defines to make listing easier
+\def\address{\addressicon\hspace{3pt}{\addresstext}}
+\def\linkedin{\linkedinicon\hspace{3pt}\href{\linkedinlink}{\@linkedintext}}
+\def\phone{\phoneicon\hspace{3pt}{\phonetext}}
+\def\email{\emailicon\hspace{3pt}\href{\emaillink}{\emailtext}}
+\def\github{\githubicon\hspace{3pt}\href{\githublink}{\githubtext}}
+\def\website{\websiteicon\hspace{3pt}\href{\websitelink}{\websitetext}}
+
+\RequirePackage{tabularx}
+\newcommand{\header}[4]{
+  \begin{tabularx}{\textwidth}{Xr}
+    {
+      \begin{tabular}[c]{l}
+        % \fontsize{25}{35}\selectfont{\color{black}{{\textbf{\@fullname}}}} \\
+        {\fontsize{36}{44}\headingfont\selectfont\color{black}{\textbf{\@fullname}}} \\
+        {\textit{\@position}}
+      \end{tabular}
+    } & {
+        \begin{tabular}[c]{l@{\hspace{1.5em}}l}
+          {\small#1} & {\small#2} \\
+          {\small#3} & {\small#4}
+        \end{tabular}
+      }
+  \end{tabularx}
+}
+
+%----------------------------------------------------------------------------------------
 % List environment
 %----------------------------------------------------------------------------------------
 
 % TODO: What does this do?
 \setlength{\tabcolsep}{0pt}
-\newenvironment{entrylist}{%
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}
-    }{%
-  \end{tabular*}
-}
-\renewcommand{\bfseries}{\headingfont\color{headercolor}}
-\newcommand{\entry}[4]{%
-  #1&\parbox[t]{12.8cm}{%
-    \textbf{#2}%
-    \hfill%
-    {\footnotesize\addfontfeature{Color=lightgray} #3}\\%
-    #4\vspace{\parsep}%
-  }\\}
+% \newenvironment{entrylist}{%
+%   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}
+%     }{%
+%   \end{tabular*}
+% }
+% \renewcommand{\bfseries}{\headingfont\color{headercolor}}
+% \newcommand{\entry}[4]{%
+%   #1&\parbox[t]{12.8cm}{%
+%     \textbf{#2}%
+%     \hfill%
+%     {\footnotesize\addfontfeature{Color=lightgray} #3}\\%
+%     #4\vspace{\parsep}%
+%   }\\}
 
 %----------------------------------------------------------------------------------------
 % Other tweaks

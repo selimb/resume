@@ -1,7 +1,13 @@
+% !TEX program = xelatex
 \documentclass{mycv}
 \usepackage{tabularx}
 \usepackage{marvosym}
 \usepackage{fontawesome}
+\usepackage{changepage}
+
+% \newcommand\CC{C\nolinebreak[4]\hspace{-.05em}\raisebox{.4ex}{\relsize{-2}{\textbf{++}}}}
+% \newcommand\CC{C\nolinebreak[4]\hspace{-.05em}\raisebox{.4ex}{++}}
+\newcommand\CC{C\texttt{++}}
 
 \begin{document}
 
@@ -9,11 +15,104 @@
 % Header
 %------------------------------------------------------------------------------
 \name{Selim Belhaouane}
-\subtitle{Software Engineer}
+% \subtitle{Software Engineer}
 \setphone{+1 (514) 891-9225}
 \setemail{selim.belhaouane@gmail.com}
 \setgithub{selimb}
 \setlinkedin{XXX}
 \header{\phone}{\github}{\email}{\linkedin}
+
+\begin{objective}
+    Resourceful software engineer with 5+ years in developing web applications, CAE solutions, and developer tools.
+    Passionate about automation, CI/CD, test-driven development, types, and documentation.
+    Loves both learning and teaching.
+\end{objective}
+
+\vspace{-\parskip}\noindent\rule{\textwidth}{0.4pt}
+
+\section{experience}
+
+\begin{sectionindent}
+    %
+    % Maya
+    %
+    \entryhead{MAYA Heat Transfer Technologies Ltd.}{Montreal, Canada}
+    \position{Team Lead, Full Stack}{2020-Now}
+
+    Lead development for \href{https://blogs.sw.siemens.com/simcenter/simcenter-3d-2022-1-remote-solve/}{\itfont{Remote Simulation}}: an on-premise distributed HPC platform integrated with Simcenter 3D.
+
+    \begin{itemize}
+        \item Architected entire system: backend web server, frontend single-page application, Simcenter 3D client, and background job runners.
+        \item
+        \item XXX Onboarded, reviewed, and
+    \end{itemize}
+
+    \tagline{Django, FastAPI, React, Typescript, PostgreSQL, Docker, \CC, Qt}
+
+    \position{Technical Lead, Full Stack}{2020-2021}
+
+    XXX
+
+    \position{CAE/CAE Software Developer}{2017-2020}
+
+    Develop robust NX Open programs for CAD/CAE applications.
+    \begin{itemize}
+        \item Foo
+    \end{itemize}
+    \tagline{Python, \CC}
+
+    \position{Test Engineering Intern}{2014-2015}
+    Test Siemens PLM CAE software, and Thermal/Flow solvers.
+
+    \vspace{3\parskip}
+    %
+    % McGill
+    %
+    \entryhead{McGill Centre for Intelligent Machines}{Montreal, Canada}
+    \position{Undergraduate Researcher}{\small{Summer} 2013}
+
+    Realistic modeling of friction forces at contact between rigid bodies.
+
+    \tagline{MATLAB}
+
+\end{sectionindent}
+
+\section{education}
+
+\begin{sectionindent}
+    %
+    % Master's
+    %
+    \entryhead{M.Eng Thesis}{McGill University}
+    \position{Mechanical Engineering}{2015-2017}
+    Master's in computational fluid dynamics, sponsored by Maya Heat Transfer Technologies.
+    \begin{itemize}
+        \item Thesis on implementation and validation of turbulence model in academic and commercial (NX Flow) finite volume codes.
+        \item Use NX Open, Tecplot and Python for pre-processing and/or post-processing purposes.
+        \item Develop web interface for querying test suite.
+    \end{itemize}
+
+    \tagline{Python, Matplotlib, Tecplot, \CC, Fortran, JQuery}
+
+    %
+    % Bachelor's
+    %
+    \entryhead{B.Eng}{McGill University}
+    \position{Mechanical Engineering}{2011-2015}
+    Capstone project with McGill Racing Team (Formula SAE)
+    \begin{itemize}
+        \item Carbon fiber steering wheel analysis, design and fabrication
+        \item Use of NX for analysis and design
+    \end{itemize}
+    CGPA : 3.68/4.0
+\end{sectionindent}
+
+\section{certifications}
+
+\begin{sectionindent}
+    \entryhead{Agile Foundation Training}{\itfont October 2019}
+\end{sectionindent}
+
+\section{skills}
 
 \end{document}

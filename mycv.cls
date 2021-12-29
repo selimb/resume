@@ -87,22 +87,6 @@
   \stepcounter{colorCounter}%
 }
 
-% \renewcommand{\section}[1]{
-%   {\par\vspace{\parskip}
-%       {%
-%         \LARGE\headingfont\color{headercolor}%
-%         \@sectioncolor #1%
-%       }
-%       \par\vspace{\parskip}}
-% }
-
-% \renewcommand{\subsection}[2]{
-%   \par\vspace{.5\parskip}%
-%   \Large\headingfont\color{headercolor} #2%
-%   \par\vspace{.25\parskip}%
-% }
-
-% TODO
 \pagestyle{empty}
 
 %----------------------------------------------------------------------------------------
@@ -163,31 +147,20 @@
 }
 
 %----------------------------------------------------------------------------------------
-% List environment
+% Spacing
 %----------------------------------------------------------------------------------------
 
+\RequirePackage[margin=1cm,nohead,nofoot]{geometry}
 % TODO: What does this do?
 \setlength{\tabcolsep}{0pt}
-% \newenvironment{entrylist}{%
-%   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}
-%     }{%
-%   \end{tabular*}
-% }
-% \renewcommand{\bfseries}{\headingfont\color{headercolor}}
-% \newcommand{\entry}[4]{%
-%   #1&\parbox[t]{12.8cm}{%
-%     \textbf{#2}%
-%     \hfill%
-%     {\footnotesize\addfontfeature{Color=lightgray} #3}\\%
-%     #4\vspace{\parsep}%
-%   }\\}
+\setlength{\parskip}{1mm}
+\RequirePackage{enumitem}
+\setlist[itemize]{noitemsep}
 
 %----------------------------------------------------------------------------------------
 % Other tweaks
 %----------------------------------------------------------------------------------------
 
-% \RequirePackage[left=1.5cm,top=1.5cm,right=1.5cm,bottom=1.5cm,nohead,nofoot]{geometry}
-\RequirePackage[margin=1cm,nohead,nofoot]{geometry}
 \RequirePackage{hyperref}
 \hypersetup{
   pdftitle=Resume \textbar{} Selim Belhaouane,
@@ -198,8 +171,7 @@
 %----------------------------------------------------------------------------------------
 % Body
 %----------------------------------------------------------------------------------------
-\setlength{\parskip}{1mm}
-%
+
 % Usage: \section{<name>}
 \renewcommand{\section}[1]{
   \par\vspace{3\parskip}
@@ -224,6 +196,7 @@
 \newcommand{\position}[2]{
   \vspace{-1\parskip}
   {\itfont #1} \hfill {\itfont #2} \par
+  \vspace{-1\parskip}
 }
 
 \RequirePackage{tikz}
@@ -232,7 +205,7 @@
   \tikz[baseline]\node[anchor=base,draw=darkgray!70,rounded corners=0.5ex,inner xsep=1ex,inner ysep =0.55ex,text height=1.3ex,text depth=.25ex]{#1};
 }
 % Usage: \tagline{<tag1>, <tag2>, ...}
-\newcommand{\tagline}[1]{\hspace{0.4cm}{\foreach \n in {#1}{{\footnotesize\techtag{\n}}}} \par \vspace{\parskip}}
+\newcommand{\tagline}[1]{\hspace{0.4cm}{\foreach \n in {#1}{{\footnotesize\techtag{\n}}}} \par \vspace{2\parskip}}
 
 % \newcommand{\entryhead}[4]{
 %   \vspace{-5pt}\item[]

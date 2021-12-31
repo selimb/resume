@@ -55,12 +55,13 @@
 \RequirePackage[math-style=TeX]{unicode-math}
 
 % \newfontfamily\bodyfont{Roboto-Regular}[Path=fonts/]
-\newfontfamily\thinfont{Roboto-Thin}[Path=fonts/]
-\newfontfamily\headingfont{RobotoCondensed-Bold}[Path=fonts/]
-\newfontfamily\itfont{Roboto-LightItalic}[Path=fonts/]
+\newfontfamily\thinfont{Roboto-Thin}[Path=fonts/Roboto/]
+\newfontfamily\bffont{RobotoCondensed-Bold}[Path=fonts/RobotoCondensed/]
+\newfontfamily\bfitfont{RobotoCondensed-BoldItalic}[Path=fonts/RobotoCondensed/]
+\newfontfamily\itfont{Roboto-LightItalic}[Path=fonts/Roboto/]
 
 \defaultfontfeatures{Mapping=tex-text}
-\setmainfont[Mapping=tex-text, Path = fonts/]{Roboto-Light}
+\setmainfont[Mapping=tex-text, Path = fonts/Roboto/]{Roboto-Light}
 % Default color. Doing it this way makes \color overrides work, whereas setting Color= in \setmainfont requires using \addfontfeatures
 \color{textcolor}
 
@@ -132,7 +133,7 @@
       \begin{tabular}[c]{l}
         % \fontsize{25}{35}\selectfont{\color{black}{{\textbf{\@fullname}}}} \\
         % {\fontsize{25}{35}\headingfont\selectfont\color{black}{\textbf{\@fullname}}} \\
-        {\fontsize{35}{42}\headingfont\selectfont\color{black}{\textbf{\@fullname}}}
+        {\fontsize{35}{42}\bffont\selectfont\color{black}{\textbf{\@fullname}}}
         % \\
         % {\Large\textit{\@position}}
       \end{tabular}
@@ -143,7 +144,7 @@
         \end{tabular}
       }
   \end{tabularx}
-  \vspace{-\parskip}
+  \vspace{\parskip}
 }
 
 %----------------------------------------------------------------------------------------
@@ -165,7 +166,11 @@
 \hypersetup{
   pdftitle=Resume \textbar{} Selim Belhaouane,
   pdfauthor=Selim Belhaouane,
-  pdfsubject=Resume%
+  pdfsubject=Resume,
+  allbordercolors=0.1 0.05 0.67,
+  % allbordercolors=cyan,
+  pdfborderstyle={/S/U/W 1}
+  % pdfborder=0 0 0.5,
 }
 
 %----------------------------------------------------------------------------------------
@@ -176,7 +181,7 @@
 \renewcommand{\section}[1]{
   \par\vspace{3\parskip}
   {%
-    \LARGE\headingfont\color{headercolor}%
+    \LARGE\bffont\color{headercolor}%
     \@sectioncolor #1%
   }
   \par\vspace{\parskip}
@@ -189,13 +194,14 @@
 % Usage: \entryhead{<company>}{<city, country>}
 \newcommand{\entryhead}[2]{
   % {\headingfont \color{headercolor} \bfseries #1} \hfill {\color{lightgray}#2} \par
-  {\headingfont \color{headercolor} \bfseries #1} \hfill #2 \par
+  {\bffont \color{headercolor} #1} \hfill {\bffont #2} \par
 }
 
 % Usage: \position{<position>}{<start_date - end_date>}
 \newcommand{\position}[2]{
   \vspace{-1\parskip}
-  {\itfont #1} \hfill {\itfont #2} \par
+  % {\bfitfont #1} \hfill {\itfont #2} \par
+  {\bfitfont #1} \hfill {\itfont #2} \par
   \vspace{-1\parskip}
 }
 
